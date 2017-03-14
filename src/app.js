@@ -128,6 +128,7 @@ class FacebookBot {
                     }
 					
 					console.log(carousel);
+					console.log(carousel.length());
 
                     let facebookMessage = {};
                     carousel.forEach((c) => {
