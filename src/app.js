@@ -127,8 +127,6 @@ class FacebookBot {
                         }
                     }
 
-                    carousel.forEach(function(){console.log("alok")});
-
                     let facebookMessage = {};
                     carousel.forEach((c) => {
                         // buttons: [ {text: "hi", postback: "postback"} ], imageUrl: "", title: "", subtitle: ""
@@ -137,6 +135,7 @@ class FacebookBot {
 
                         card.title = c.title;
                         card.image_url = c.imageUrl;
+                        console.log(card.image_url);
                         if (this.isDefined(c.subtitle)) {
                             card.subtitle = c.subtitle;
                         }
