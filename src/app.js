@@ -117,6 +117,9 @@ class FacebookBot {
 
                 case 1: {
                     let carousel = [message];
+					
+					console.log(carousel);
+					console.log(messages);
 
                     for (messageIndex++; messageIndex < messages.length; messageIndex++) {
                         if (messages[messageIndex].type == 1) {
@@ -126,6 +129,8 @@ class FacebookBot {
                             break;
                         }
                     }
+					
+					console.log(carousel);
 
                     let facebookMessage = {};
                     carousel.forEach((c) => {
