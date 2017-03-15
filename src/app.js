@@ -519,9 +519,6 @@ app.post('/webhook/', (req, res) => {
     try {
         const data = JSONbig.parse(req.body);
 
-        console.log("POST");
-        console.log("DATA -> " + JSON.stringify(data));
-
         if (data.entry) {
             let entries = data.entry;
             entries.forEach((entry) => {
@@ -541,8 +538,7 @@ app.post('/webhook/', (req, res) => {
             if (data.key == "KEY"){
                 let subscriptions = data.subscriptions;
                 subscriptions.forEach((subscription) => {
-                    console.log(this);
-                    this.doRichContentResponse(subscription.sender_id, data.ofertas)
+                    facebookBot.doRichContentResponse(subscription.sender_id, data.ofertas)
                 });
             }
         }
