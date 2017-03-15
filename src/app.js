@@ -538,9 +538,8 @@ app.post('/webhook/', (req, res) => {
             if (data.key == "KEY"){
                 let subscriptions = data.subscriptions;
                 subscriptions.forEach((subscription) => {
-                    console.log(subscription);
+                    this.doRichContentResponse(subscription.sender_id, data.ofertas)
                 });
-                console.log(data.ofertas);
             }
         }
 
