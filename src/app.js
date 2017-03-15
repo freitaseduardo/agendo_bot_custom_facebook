@@ -97,10 +97,15 @@ class FacebookBot {
     doRichContentResponse(sender, messages) {
         let facebookMessages = []; // array with result messages
 
+        console.log(messages);
+
         for (let messageIndex = 0; messageIndex < messages.length; messageIndex++) {
             let message = messages[messageIndex];
 
             switch (message.type) {
+                case 5:
+                  console.log("wtf");
+                  break;
                 case 0:
                     // speech: ["hi"]
                     // we have to get value from fulfillment.speech, because of here is raw speech
@@ -135,7 +140,6 @@ class FacebookBot {
 
                         card.title = c.title;
                         card.image_url = c.imageUrl;
-                        console.log(card.image_url);
                         if (this.isDefined(c.subtitle)) {
                             card.subtitle = c.subtitle;
                         }
