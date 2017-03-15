@@ -96,6 +96,9 @@ class FacebookBot {
     doRichContentResponse(sender, messages) {
         let facebookMessages = []; // array with result messages
 
+        console.log(sender);
+        console.log(messages);
+
         for (let messageIndex = 0; messageIndex < messages.length; messageIndex++) {
             let message = messages[messageIndex];
 
