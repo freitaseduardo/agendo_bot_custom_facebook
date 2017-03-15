@@ -55,7 +55,6 @@ class FacebookBot {
           }
 
       }, function(error, response, body) {
-          console.log(response)
           if (error) {
               console.log('Error sending messages: ', error)
           } else if (response.body.error) {
@@ -96,8 +95,6 @@ class FacebookBot {
 
     doRichContentResponse(sender, messages) {
         let facebookMessages = []; // array with result messages
-
-        console.log(messages);
 
         for (let messageIndex = 0; messageIndex < messages.length; messageIndex++) {
             let message = messages[messageIndex];
@@ -519,8 +516,8 @@ app.post('/webhook/', (req, res) => {
     try {
         const data = JSONbig.parse(req.body);
 
-        console.log(req);
-        console.log(data);
+        console.log("POST");
+        console.log("DATA -> " + JSON.stringify(data));
 
         if (data.entry) {
             let entries = data.entry;
