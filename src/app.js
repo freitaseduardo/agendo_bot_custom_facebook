@@ -520,8 +520,10 @@ app.post('/webhook/', (req, res) => {
         console.log("DATA -> " + JSON.stringify(data));
 
         if (data.entry) {
+            console.log(data.entry);
             let entries = data.entry;
             entries.forEach((entry) => {
+                console.log(entry);
                 let messaging_events = entry.messaging;
                 if (messaging_events) {
                     messaging_events.forEach((event) => {
