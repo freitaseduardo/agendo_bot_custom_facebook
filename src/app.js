@@ -517,6 +517,9 @@ app.post('/webhook/', (req, res) => {
     try {
         const data = JSONbig.parse(req.body);
 
+        console.log(req);
+        console.log(data);
+
         if (data.entry) {
             let entries = data.entry;
             entries.forEach((entry) => {
